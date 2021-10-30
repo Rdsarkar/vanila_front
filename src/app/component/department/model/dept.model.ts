@@ -1,4 +1,4 @@
 export class DeptModel {
-    DId!: number;
-    DName: string | undefined;
+    dId!: number;
+    dName: string | undefined;
 }

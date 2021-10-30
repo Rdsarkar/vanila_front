@@ -13,7 +13,6 @@ export class DeptService {
  
 
   constructor(private httpClient:HttpClient ) { }
- 
   
   baseUrl: string = 'https://localhost:44349/api/Departments';
   SobData() {
@@ -22,4 +21,11 @@ export class DeptService {
   CreateKori(x: DeptModel) {
     return this.httpClient.post<Res>(this.baseUrl + "/InsertNewData", x, headerOption);
   }
+  UpateKori(y: DeptModel) {
+    return this.httpClient.post<Res>(this.baseUrl + "/UpdateData", y, headerOption);
+  }
+  DeleteKori(x: DeptModel) {
+    return this.httpClient.post<Res>(this.baseUrl + "/DeleteData", x, headerOption);
+  }
+
 }

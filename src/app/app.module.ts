@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DepartmentComponent } from './component/department/department.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { DepartListComponent } from './component/depart-list/depart-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    DepartListComponent
   ],
   imports: [
     BrowserModule,

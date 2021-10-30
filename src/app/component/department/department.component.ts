@@ -27,27 +27,27 @@ export class DepartmentComponent implements OnInit {
 
   createButtonClickKorlam() {
     let x: DeptModel = new DeptModel();
-    x.DId = this.createDId ?? 0;
-    x.DName = this.createDName ?? "";
+    x.dId = this.createDId ?? 0;
+    x.dName = this.createDName ?? "";
 
-    if (x.DId == 0) {
+    if (x.dId == 0) {
       Swal.fire({
         icon: 'error',
         title: 'error hoise',
-        text: 'id vul ase, tik na korle ghushi khaben!'
+        text: 'Please fill up ID field '
       });
     }
-    else if (x.DName == "") {
+    else if (x.dName == "") {
       Swal.fire({
         icon: 'error',
         title: 'error hoise',
-        text: 'name vul ase, tik na korle ghushi khaben!'
+        text: 'Please fill up Name Field!'
       });
     }
     else {
       //server
       this.deptService.CreateKori(x).subscribe(
-        (zafir) => {
+        (success) => {
           // window.location.reload();
 
           //client
@@ -55,15 +55,15 @@ export class DepartmentComponent implements OnInit {
           Swal.fire({
             icon: 'success',
             title: 'Success',
-            text: 'create hoise!'
+            text: 'create Done!'
           });
 
         },
-        (lol) => {
+        (error) => {
           Swal.fire({
             icon: 'error',
             title: 'error hoise',
-            text: 'Onek error hoise, tik na korle ghushi khaben!'
+            text: 'There is some error so No data Inserted!'
           });
         }
       );
