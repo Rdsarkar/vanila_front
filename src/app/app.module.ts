@@ -7,13 +7,15 @@ import { DepartmentComponent } from './component/department/department.component
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-import { DepartListComponent } from './component/depart-list/depart-list.component'
+import { DepartListComponent } from './component/depart-list/depart-list.component';
+import { DetailsComponent } from './component/details/details.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     DepartmentComponent,
-    DepartListComponent
+    DepartListComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
