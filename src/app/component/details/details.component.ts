@@ -12,7 +12,7 @@ export class DetailsComponent implements OnInit {
   constructor(private detailService: DetailService) { }
  
   allDetails: CustomDetailsModel[] = [];
-  allDepts: DeptModel[] = [];
+  //allDepts: DeptModel[] = [];
   ngOnInit(): void {
   
     this.detailService.AllDetails().subscribe(
