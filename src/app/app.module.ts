@@ -8,14 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { DepartListComponent } from './component/depart-list/depart-list.component';
-import { DetailsComponent } from './component/details/details.component'
+import { DetailsComponent } from './component/details/details.component';
+import { DetailListComponent } from './component/detail-list/detail-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     DepartmentComponent,
     DepartListComponent,
-    DetailsComponent
+    DetailsComponent,
+    DetailListComponent
   ],
   imports: [
     BrowserModule,
