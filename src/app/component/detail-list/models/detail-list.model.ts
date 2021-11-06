@@ -1,5 +1,5 @@
 export class DetailListModel {
     id!: number;
-    name: string | undefined;
+    name!: string;
     dId!: number;
 }

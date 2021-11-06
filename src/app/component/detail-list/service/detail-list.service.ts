@@ -5,6 +5,7 @@ import { CustomDetailsModel } from '../../details/models/customDetails.model';
 // import { DeptListModel } from '../models/detail-list.model';
 import { DetailListModel } from '../models/detail-list.model';
 import { DeptModel } from '../../department/model/dept.model';
+import { DetailDeleteModel } from '../models/detailDelete.model';
 const headerOption = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -28,12 +29,14 @@ export class DetailListService {
     return this.httpClient.post<Res>(this.baseUrl2, x, headerOption);
   }
   baseUrl3: string ='https://localhost:44349/api/Details/UpdateAllDetails';
-  UpdateDetails(x: number, y: DetailListModel) {
-    return this.httpClient.post<Res>(this.baseUrl3, x, headerOption);
+  
+  UpdateDetails( y: DetailListModel) {
+    return this.httpClient.post<Res>(this.baseUrl3, y, headerOption);
   }
 
-  DeleteDetails() {
-    return this.httpClient.get<Res>(this.baseUrl2, headerOption);
+  baseUrl4: string ='http://localhost:44349/api/Details/DeleteData';
+  DeleteDetails(x: DetailDeleteModel) {
+    return this.httpClient.post<Res>(this.baseUrl4, x, headerOption);
   }
 
 }
