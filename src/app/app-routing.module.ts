@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DepartListComponent } from './component/depart-list/depart-list.component';
 import { DepartmentComponent } from './component/department/department.component';
-import { DetailsComponent } from './component/details/details.component'
-import { DetailListComponent } from './component/detail-list/detail-list.component'
+import { DetailsComponent } from './component/details/details.component';
+import { DetailsCreateComponent } from './component/details-create/details-create.component';
 
 
 const routes: Routes = [
@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'url4',
-    component: DetailListComponent
+    component: DetailsCreateComponent
   },
 ];
 

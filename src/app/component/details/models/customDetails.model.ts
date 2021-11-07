@@ -1,5 +1,5 @@
 export class CustomDetailsModel{
-    id : number | undefined;
+    id! : number ;
     name: string | undefined;
     dName: string | undefined;
 }

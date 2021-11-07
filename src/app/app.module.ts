@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { DepartListComponent } from './component/depart-list/depart-list.component';
 import { DetailsComponent } from './component/details/details.component';
-import { DetailListComponent } from './component/detail-list/detail-list.component'
+import { DetailsCreateComponent } from './component/details-create/details-create.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { DetailListComponent } from './component/detail-list/detail-list.compone
     DepartmentComponent,
     DepartListComponent,
     DetailsComponent,
-    DetailListComponent
+    DetailsCreateComponent,
   ],
   imports: [
     BrowserModule,

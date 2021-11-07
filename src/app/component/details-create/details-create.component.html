@@ -1,0 +1,27 @@
+<p>details-create works!</p>
+<div>
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">ID</label>
+      <input [(ngModel)]="createDetailsId" name="g" type="number" class="form-control" id="exampleFormControlInput1"
+        placeholder="Enter ID">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input [(ngModel)]="createDetailsName" name="gg" type="text" class="form-control" id="exampleFormControlInput1"
+        placeholder="Enter Your Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Department Name</label>
+
+      <!-- <input [(ngModel)]="createDetailsdId" name="gga" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name"> -->
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option *ngFor="let input1 of deptArray" value="{{input1.dId}}">{{input1.dName}}   </option>
+      </select>
+       
+
+        <button type =" button" (click)="createDetailsButton()" type="button" class="btn btn-primary"
+          style=" border-radius: 5px 5px;">Submit</button>
+    </div>
+  </form>
+</div>

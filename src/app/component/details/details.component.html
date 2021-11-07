@@ -37,7 +37,7 @@
         <td>{{abc.name}}</td>
         <td>{{abc.dName}}</td>
         <td> <button class="btn btn-sn btn-warning">Update</button> </td>
-        <td><button class="btn btn-sn btn-danger">Delete</button></td>
+        <td><button class="btn btn-sn btn-danger" (click)="deleteDetails(abc.id)">Delete</button></td>
       </tr>
     </tbody>
   </table>
