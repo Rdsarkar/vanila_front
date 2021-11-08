@@ -24,7 +24,12 @@ export class DetailService {
   // AllDepts(){
   //   return this.httpClient.get<Res>(this.baseUrl2, headerOption);
   // }
-  baseUrl4: string ='https://localhost:44349/api/Details/DeleteData';
+
+  baseUrl5: string = 'https://localhost:44349/api/Details/UpdateName';
+  UpdateDetailsName(y: DetailAllModel) {
+    return this.httpClient.post<Res>(this.baseUrl5, y, headerOption);
+  }
+  baseUrl4: string = 'https://localhost:44349/api/Details/DeleteData';
 
   DeleteDetails(x: DetailDeleteModel) {
     return this.httpClient.post<Res>(this.baseUrl4, x, headerOption);

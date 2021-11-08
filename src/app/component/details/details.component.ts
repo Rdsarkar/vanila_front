@@ -4,6 +4,9 @@ import { CustomDetailsModel } from './models/customDetails.model';
 import { DeptModel } from '../department/model/dept.model'
 import { DetailService } from './services/detail.service';
 import { DetailDeleteModel } from './models/detailsDelete.model';
+import { DetailAllModel } from './models/detailsAll.model';
+import { CustomDetailsNameModel } from './models/customDetailsName.model';
+
 
 @Component({
   selector: 'app-details',
@@ -14,6 +17,8 @@ export class DetailsComponent implements OnInit {
 
   constructor(private detailService: DetailService) { }
  
+  allDepts: DeptModel[] = [];
+  allDetailsName : CustomDetailsNameModel[] = [];
   allDetails: CustomDetailsModel[] = [];
   //allDepts: DeptModel[] = [];
   ngOnInit(): void {
@@ -23,8 +28,22 @@ export class DetailsComponent implements OnInit {
         this.allDetails = data.payload;
       }
     )
+    
 
     
+  }
+  updateDetailsName(x : DetailAllModel){
+    this.detailService.UpdateDetailsName(x).subscribe(
+      (success) => {
+        for(let gg of this.allDetails){
+          if(gg.id === x.id){
+            // this.allDetails[this.allDetails.indexOf(gg) ]=x;
+            break;
+          }
+        }
+      }
+      
+    )
   }
 
   deleteDetails(x: number){
@@ -43,6 +62,8 @@ export class DetailsComponent implements OnInit {
       }
     );
   }
-  
+
+
+
 
 }
