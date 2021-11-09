@@ -21,7 +21,7 @@
   </form>
 </div> -->
 
-<table class="table">
+<table class="table col-6 offset-3">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -39,11 +39,13 @@
           placeholder="Enter Your Name"></td>
       <!-- <td>{{abc.name}}</td> -->
 
-      <td>{{abc.dName}}</td>
-      <!-- <select class="form-control" id="exampleFormControlSelect1" name="aar" required>
-        <option value="undefined" disabled>Select koro </option>
-        <option *ngFor="let input1 of allDepts" ngValue="{{input1.dId}}">{{input1.dName}} </option>
-      </select> -->
+      <!-- <td>{{abc.dName}}</td> -->
+      <td>
+        <select [(ngModel)]="abc.dName" class="form-control" id="exampleFormControlSelect1" name="aar" required>
+          <option value="undefined" disabled>Select koro </option>
+          <option *ngFor="let input1 of allDepts" value="{{input1.dName}}">{{input1.dName}} </option>
+        </select>
+      </td>
 
 
       <td> <button class="btn btn-sn btn-warning" (click)="updateDetailsName">Update</button> </td>

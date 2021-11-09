@@ -20,10 +20,10 @@ export class DetailService {
   AllDetails() {
     return this.httpClient.get<Res>(this.baseurl, headerOption);
   }
-  // baseUrl2: string = 'https://localhost:44349/api/Departments';
-  // AllDepts(){
-  //   return this.httpClient.get<Res>(this.baseUrl2, headerOption);
-  // }
+  baseUrl2: string = 'https://localhost:44349/api/Departments';
+  AllDepts(){
+    return this.httpClient.get<Res>(this.baseUrl2, headerOption);
+  }
 
   baseUrl5: string = 'https://localhost:44349/api/Details/UpdateName';
   UpdateDetailsName(y: DetailAllModel) {

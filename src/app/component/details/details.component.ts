@@ -6,6 +6,7 @@ import { DetailService } from './services/detail.service';
 import { DetailDeleteModel } from './models/detailsDelete.model';
 import { DetailAllModel } from './models/detailsAll.model';
 import { CustomDetailsNameModel } from './models/customDetailsName.model';
+import { DetailsCreateService } from '../details-create/services/details-create.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { CustomDetailsNameModel } from './models/customDetailsName.model';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private detailService: DetailService) { }
+  constructor(private detailService: DetailService, private lol: DetailsCreateService) { }
  
   allDepts: DeptModel[] = [];
   allDetailsName : CustomDetailsNameModel[] = [];
@@ -28,6 +29,16 @@ export class DetailsComponent implements OnInit {
         this.allDetails = data.payload;
       }
     )
+
+    this.lol.DeptInput().subscribe(
+      (success) => {
+        console.log("test");
+        console.log(success);
+
+
+        this.allDepts = success.payload;
+      }
+    );
     
 
     
