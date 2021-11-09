@@ -32,7 +32,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let abc of allDetails">
+    <tr *ngFor="let abc of allCDetails">
 
       <th scope="row">{{abc.id}}</th>
       <td> <input [(ngModel)]="abc.name" name="gg" type="text" class="form-control" id="exampleFormControlInput1"
@@ -48,7 +48,7 @@
       </td>
 
 
-      <td> <button class="btn btn-sn btn-warning" (click)="updateDetailsName">Update</button> </td>
+      <td> <button class="btn btn-sn btn-warning" (click)="updateDetails(abc)">Update</button> </td>
       <td><button class="btn btn-sn btn-danger" (click)="deleteDetails(abc.id)">Delete</button></td>
 
 

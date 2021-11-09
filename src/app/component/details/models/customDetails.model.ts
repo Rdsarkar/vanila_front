@@ -1,6 +1,7 @@
 export class CustomDetailsModel{
     id! : number ;
     name: string | undefined;
+    dId : number | undefined;
     dName: string | undefined;
 }
 

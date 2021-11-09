@@ -17,16 +17,16 @@ import { DetailsCreateService } from '../details-create/services/details-create.
 export class DetailsComponent implements OnInit {
 
   constructor(private detailService: DetailService, private lol: DetailsCreateService) { }
- 
+
   allDepts: DeptModel[] = [];
-  allDetailsName : CustomDetailsNameModel[] = [];
-  allDetails: CustomDetailsModel[] = [];
+  allDetailsName: CustomDetailsNameModel[] = [];
+  allCDetails: CustomDetailsModel[] = [];
   //allDepts: DeptModel[] = [];
   ngOnInit(): void {
-  
+
     this.detailService.AllDetails().subscribe(
       (data) => {
-        this.allDetails = data.payload;
+        this.allCDetails = data.payload;
       }
     )
 
@@ -39,37 +39,43 @@ export class DetailsComponent implements OnInit {
         this.allDepts = success.payload;
       }
     );
-    
 
-    
+
+
   }
-  updateDetailsName(x : DetailAllModel){
-    this.detailService.UpdateDetailsName(x).subscribe(
+  updateDetails(x: CustomDetailsModel) {
+    let updateModel: CustomDetailsModel = new CustomDetailsModel();
+    updateModel.id = x.id ?? "";
+    updateModel.name = x.name ?? "";
+    updateModel.dName = x.dName ?? "";
+    updateModel.dId = this.allDepts.find(y => y.dName == x.dName)?.dId;
+
+    this.detailService.UpdateDetails(updateModel).subscribe(
       (success) => {
-        for(let gg of this.allDetails){
-          if(gg.id === x.id){
-            // this.allDetails[this.allDetails.indexOf(gg) ]=x;
+        for (let gg of this.allCDetails) {
+          if (gg.id === x.id) {
+            this.allCDetails[this.allCDetails.indexOf(gg)] = x;
             break;
           }
         }
       }
-      
+
     )
   }
 
-  deleteDetails(x: number){
-    let k: DetailDeleteModel= new DetailDeleteModel();
+  deleteDetails(x: number) {
+    let k: DetailDeleteModel = new DetailDeleteModel();
     k.id = x;
     this.detailService.DeleteDetails(k).subscribe(
       (payload) => {
         //this.allDetails = payload.payload;
-        for(let aaa of this.allDetails){
-        if (aaa.id == x) {
-          this.allDetails.splice(this.allDetails.indexOf(aaa), 1);
-          break;
-          
+        for (let aaa of this.allCDetails) {
+          if (aaa.id == x) {
+            this.allCDetails.splice(this.allCDetails.indexOf(aaa), 1);
+            break;
+
+          }
         }
-      }
       }
     );
   }
