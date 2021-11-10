@@ -1,7 +1,37 @@
-<p>depart-list works!</p>
-<input type="text">
-<a href="url1">ggg</a>
-<table class="table">
+<nav class="navbar navbar-expand-lg navbar-light bg-light col-4 offset-4">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="url2">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="url1">Create Department</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="url3">Details List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="url4">Create Details</a>
+        </li>
+    </ul>
+   
+  </div>
+</nav>
+
+<br><br>
+<table class="table col-6 offset-5">
+  <tr>
+    <h5 style="color: white;background-color: black; width: min-content; ">Department_List</h5>
+  </tr>
+  <tr><input [(ngModel)]= "searchName" type="text" placeholder="Search Here" (keyup)="searchDept()"></tr>
+</table>
+<!-- <h4 class="col-5 offset-5">This is Department List  <input type="text"></h4> -->
+<table class="table col-6 offset-3">
+
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -16,9 +46,28 @@
         <input [(ngModel)]="a.dName" name="hellok" type="text" class="form-control" id="exampleInputPassword21"
           value={{a.dName}}>
       </td>
-      <td><button class="btn btn-sm btn-warning" (click)="updateButtonClickKorlam(a)">Edit</button></td>
+      <td><button class="btn btn-sm btn-warning " (click)="updateButtonClickKorlam(a)">Edit</button></td>
       <td><button class="btn btn-sm btn-danger" (click)="deleteButtonClickKorlam(a.dId)">Delete</button>
       </td>
     </tr>
   </tbody>
 </table>
+
+
+<!-- <div class=" btn-sm col-2 offset-5 ">
+  <a href="url1">
+    <button class=" alert-link">Department Creation </button>
+  </a>
+</div>
+
+<div class=" btn-sm col-2 offset-5 ">
+  <a href="url3">
+    <button class=" alert-link">Department Creation </button>
+  </a>
+</div>
+
+<div class=" btn-sm col-2 offset-5 ">
+  <a href="url4">
+    <button class=" alert-link">Department Creation </button>
+  </a>
+</div> -->

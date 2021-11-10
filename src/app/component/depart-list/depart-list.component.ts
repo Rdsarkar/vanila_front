@@ -3,6 +3,7 @@ import { DeptService } from '../department/service/dept.service';
 import { DeptModel } from '../department/model/dept.model'
 import { Res } from '../department/model/res.model';
 import Swal from 'sweetalert2';
+import { SearchPipe } from '../utils/search.pipe';
 
 @Component({
   selector: 'app-depart-list',
@@ -10,14 +11,16 @@ import Swal from 'sweetalert2';
   styleUrls: ['./depart-list.component.css']
 })
 export class DepartListComponent implements OnInit {
-
+  searchName: string = "";
   constructor(private deptService: DeptService) { }
   createDept: DeptModel[] = [];
+  deptBackupList: DeptModel[] = [];
   ngOnInit(): void {
     this.deptService.SobData().subscribe(
       (data) => {
         this.createDept = data.payload;
         // console.log ('data', this.createDept)
+        this.deptBackupList = data.payload;
       }
     );
   }
@@ -114,6 +117,14 @@ export class DepartListComponent implements OnInit {
         );
       }
     })
+  }
+
+  searchDept()
+  {
+    this.createDept = new SearchPipe().transform(this.deptBackupList, 'dName', this.searchName);
+    if(this.createDept.length === 0){
+      this.createDept = this.deptBackupList;
+    }
   }
 
 }

@@ -1,13 +1,40 @@
-<p style="color: green;">department works!</p>
-<form>
-    <div class="form-group" style="text-align: center; margin: 0px 530px; background-color: rgb(243, 239, 239);">
+<nav class="navbar navbar-expand-lg navbar-light bg-light col-4 offset-4">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="url1">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="url2">Department List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="url3">Details List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="url4">Create Details</a>
+          </li>
+      </ul>
+     
+    </div>
+  </nav>
+
+
+
+
+
+<form class="col-4 offset-4">
+    <div class="form-group" style="text-align: center;  ">
         <label style="font-size: 24px;">Enter Department ID  </label><br>
         <input name="hi" [(ngModel)]="createDId" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter DepartID" value="1001" style="font-size: 20px; border-radius: 5px 10px; margin:0px 15px 0px 0px; padding: 0px 0px 0px 15px;"><br><br>
         <label style="font-size: 24px;">Enter Department Name  </label><br>
         <input name="hello" [(ngModel)]="createDName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter DepartName" style="font-size: 20px; border-radius: 5px 10px;">
         <br><br>
-        <button type ="button"  (click)="createButtonClickKorlam()" type="button" class="btn btn-primary" style="background-color:lightgrey; border-radius: 5px 5px;">Submit</button>
+        <button type ="button"  (click)="createButtonClickKorlam()" type="button" class="btn btn-primary" >Submit</button>
     </div>
 </form>
 
-<a href="url2">ggg</a>
+<!-- <a href="url2">ggg</a> -->

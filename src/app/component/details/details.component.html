@@ -1,25 +1,34 @@
-<!-- <div style="background-color: lightgrey;">
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">ID</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter ID">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Name</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Department Name</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
-  </form>
-</div> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light col-5 offset-4">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="url3">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="url1">Create Department</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="url2">Department List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="url4">Details Create</a>
+        </li>
+    </ul>
+   
+  </div>
+</nav>
+
+<br>
+<table class="table col-6 offset-5">
+  <tr>
+    <h5 style="color: white;background-color: black; width: min-content; ">Details_List</h5>
+  </tr>
+  <tr><input [(ngModel)]="searchName" type="text" placeholder="Search Here" (keyup)="searchDetails()"></tr>
+</table>
 
 <table class="table col-6 offset-3">
   <thead>

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { DepartListComponent } from './component/depart-list/depart-list.component';
 import { DetailsComponent } from './component/details/details.component';
 import { DetailsCreateComponent } from './component/details-create/details-create.component';
+import { SearchPipe } from './component/utils/search.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DetailsCreateComponent } from './component/details-create/details-creat
     DepartListComponent,
     DetailsComponent,
     DetailsCreateComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

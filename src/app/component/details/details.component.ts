@@ -7,7 +7,7 @@ import { DetailDeleteModel } from './models/detailsDelete.model';
 import { DetailAllModel } from './models/detailsAll.model';
 import { CustomDetailsNameModel } from './models/customDetailsName.model';
 import { DetailsCreateService } from '../details-create/services/details-create.service';
-
+import { SearchPipe } from '../utils/search.pipe';
 
 @Component({
   selector: 'app-details',
@@ -15,18 +15,21 @@ import { DetailsCreateService } from '../details-create/services/details-create.
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-
+  searchName: string = "";
   constructor(private detailService: DetailService, private lol: DetailsCreateService) { }
 
   allDepts: DeptModel[] = [];
   allDetailsName: CustomDetailsNameModel[] = [];
+  allCBackupDetails: CustomDetailsModel[] = [];
   allCDetails: CustomDetailsModel[] = [];
+  
   //allDepts: DeptModel[] = [];
   ngOnInit(): void {
 
     this.detailService.AllDetails().subscribe(
       (data) => {
         this.allCDetails = data.payload;
+        this.allCBackupDetails = data.payload;
       }
     )
 
@@ -37,6 +40,7 @@ export class DetailsComponent implements OnInit {
 
 
         this.allDepts = success.payload;
+        
       }
     );
 
@@ -78,6 +82,14 @@ export class DetailsComponent implements OnInit {
         }
       }
     );
+  }
+
+  searchDetails()
+  {
+    this.allCDetails = new SearchPipe().transform(this.allCBackupDetails, 'name', this.searchName);
+    if(this.allCDetails.length === 0){
+      this.allCDetails = this.allCBackupDetails;
+    }
   }
 
 
