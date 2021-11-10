@@ -16,7 +16,7 @@ export class SearchPipe implements PipeTransform {
     if (!items) {
       return  items;
     }
-    if (!field || !value) {
+    if (!field || !value || value == "") {
       return items;
     }
 
