@@ -43,7 +43,7 @@
       <!-- <input [(ngModel)]="createDetailsdId" name="gga" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Dept ID"> -->
       <select [(ngModel)]="createDetailsdId" class="form-control" id="exampleFormControlSelect1" name="aar" required>
         <option value="undefined" disabled>Please Select </option>
-        <option *ngFor="let input1 of deptArray" value="{{input1.dId}}">{{input1.dName}} </option>
+        <option *ngFor="let input1 of deptArray" ngValue="{{input1.dId}}">{{input1.dName}} </option>
       </select>
 <br>
       <button type=" button" (click)="createDetailsButton()" type="button" class="btn btn-primary"
