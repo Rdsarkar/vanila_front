@@ -27,10 +27,10 @@
   <tr>
     <h5 style="color: white;background-color: black; width: min-content; ">Details_List</h5>
   </tr>
-  <tr><input [(ngModel)]="searchName" type="text" placeholder="Search Here" (keyup)="searchDetails()"></tr>
+  <tr><input [(ngModel)]="searchName" type="text" placeholder="Search Here" (keyup)="searchDetailsVALKFromAPI()"></tr>
 </table>
 
-<table class="table col-6 offset-3">
+<table class="table col-6 offset-3" *ngIf="ekaneSearchResultRaklam">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -41,7 +41,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let abc of allCDetails">
+    <tr *ngFor="let abc of ekaneSearchResultRaklam">
 
       <th scope="row">{{abc.id}}</th>
       <td> <input [(ngModel)]="abc.name" name="gg" type="text" class="form-control" id="exampleFormControlInput1"

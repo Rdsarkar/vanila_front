@@ -22,10 +22,19 @@ export class DetailsComponent implements OnInit {
   allDetailsName: CustomDetailsNameModel[] = [];
   allCBackupDetails: CustomDetailsModel[] = [];
   allCDetails: CustomDetailsModel[] = [];
-  
+
+  ekaneSearchResultRaklam: any[] = [];
+
   //allDepts: DeptModel[] = [];
   ngOnInit(): void {
-
+    this.detailService.ApiThekeSearchKorlam("").subscribe(
+      (responseTikAse) => {
+        this.ekaneSearchResultRaklam = responseTikAse.payload;
+      },
+      (responseTikNai) => {
+        this.ekaneSearchResultRaklam = responseTikNai.error.payload;
+      }
+    );
     this.detailService.AllDetails().subscribe(
       (data) => {
         this.allCDetails = data.payload;
@@ -40,7 +49,7 @@ export class DetailsComponent implements OnInit {
 
 
         this.allDepts = success.payload;
-        
+
       }
     );
 
@@ -84,12 +93,22 @@ export class DetailsComponent implements OnInit {
     );
   }
 
-  searchDetails()
-  {
+  searchDetails() {
     this.allCDetails = new SearchPipe().transform(this.allCBackupDetails, 'name', this.searchName);
-    if(this.allCDetails.length === 0){
+    if (this.allCDetails.length === 0) {
       this.allCDetails = this.allCBackupDetails;
     }
+  }
+
+  searchDetailsVALKFromAPI() {
+    this.detailService.ApiThekeSearchKorlam(this.searchName).subscribe(
+      (responseTikAse) => {
+        this.ekaneSearchResultRaklam = responseTikAse.payload;
+      },
+      (responseTikNai) => {
+        this.ekaneSearchResultRaklam = responseTikNai.error.payload;
+      }
+    );
   }
 
 

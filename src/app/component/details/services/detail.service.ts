@@ -34,5 +34,10 @@ export class DetailService {
   DeleteDetails(x: DetailDeleteModel) {
     return this.httpClient.post<Res>(this.baseUrl4, x, headerOption);
   }
-
+  ApiThekeSearchKorlam(x: any) {
+    let amarBody = {
+      j: x
+    }
+    return this.httpClient.post<any>("https://localhost:44349/api/Details/MultiColumnSearch", amarBody, headerOption);
+  }
 }
