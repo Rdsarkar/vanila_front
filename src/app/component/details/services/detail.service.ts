@@ -40,4 +40,8 @@ export class DetailService {
     }
     return this.httpClient.post<any>("https://localhost:44349/api/Details/MultiColumnSearch", amarBody, headerOption);
   }
+
+  ApiThekeSobDetailsAnlam() {
+    return this.httpClient.get<any>("https://localhost:44349/api/Details/AllDetails2", headerOption);
+  }
 }

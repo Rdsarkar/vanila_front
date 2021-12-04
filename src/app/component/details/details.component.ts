@@ -27,13 +27,13 @@ export class DetailsComponent implements OnInit {
 
   //allDepts: DeptModel[] = [];
   ngOnInit(): void {
-    this.detailService.ApiThekeSearchKorlam("").subscribe(
+    this.detailService.ApiThekeSobDetailsAnlam().subscribe(
       (responseTikAse) => {
         this.ekaneSearchResultRaklam = responseTikAse.payload;
-      },
-      (responseTikNai) => {
-        this.ekaneSearchResultRaklam = responseTikNai.error.payload;
-      }
+      }//,
+      // (responseTikNai) => {
+      //   this.ekaneSearchResultRaklam = responseTikNai.error.payload;
+      // }
     );
     this.detailService.AllDetails().subscribe(
       (data) => {
@@ -101,6 +101,16 @@ export class DetailsComponent implements OnInit {
   }
 
   searchDetailsVALKFromAPI() {
+    if (this.searchName == "") {
+      this.detailService.ApiThekeSobDetailsAnlam().subscribe(
+        (responseTikAse) => {
+          this.ekaneSearchResultRaklam = responseTikAse.payload;
+        }//,
+        // (responseTikNai) => {
+        //   this.ekaneSearchResultRaklam = responseTikNai.error.payload;
+        // }
+      );
+    }
     this.detailService.ApiThekeSearchKorlam(this.searchName).subscribe(
       (responseTikAse) => {
         this.ekaneSearchResultRaklam = responseTikAse.payload;

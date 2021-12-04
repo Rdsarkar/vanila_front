@@ -46,13 +46,18 @@
       <th scope="row">{{abc.id}}</th>
       <td> <input [(ngModel)]="abc.name" name="gg" type="text" class="form-control" id="exampleFormControlInput1"
           placeholder="Enter Your Name"></td>
-      <!-- <td>{{abc.name}}</td> -->
 
-      <!-- <td>{{abc.dName}}</td> -->
-      <td>
+      <!-- <td>
         <select [(ngModel)]="abc.dName" class="form-control" id="exampleFormControlSelect1" name="aar" required>
           <option value="undefined" disabled>Select koro </option>
-          <option *ngFor="let input1 of allDepts" value="{{input1.dName}}">{{input1.dName}} </option>
+          <option *ngFor="let input1 of allDepts" value="{{input1.dName}} ">{{input1.dName}} </option>
+        </select>
+      </td> -->
+
+      <td>
+        <select [(ngModel)]="abc.dId" class="form-control" id="exampleFormControlSelect1" name="aar" required>
+          <option value="undefined" disabled>Select koro </option>
+          <option *ngFor="let input1 of allDepts" value="{{input1.dId}}" >{{input1.dName}} </option>
         </select>
       </td>
 
