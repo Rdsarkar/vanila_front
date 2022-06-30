@@ -4,12 +4,13 @@ import { DepartListComponent } from './component/depart-list/depart-list.compone
 import { DepartmentComponent } from './component/department/department.component';
 import { DetailsComponent } from './component/details/details.component';
 import { DetailsCreateComponent } from './component/details-create/details-create.component';
+import { ChequeComponent } from './component/cheque/cheque.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'url2',
+    redirectTo: 'url5',
     pathMatch: 'full'
   },
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
     path: 'url4',
     component: DetailsCreateComponent
   },
+  {
+    path: 'url5',
+    component: ChequeComponent
+  }
 ];
 
 @NgModule({

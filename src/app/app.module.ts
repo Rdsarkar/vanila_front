@@ -11,6 +11,7 @@ import { DepartListComponent } from './component/depart-list/depart-list.compone
 import { DetailsComponent } from './component/details/details.component';
 import { DetailsCreateComponent } from './component/details-create/details-create.component';
 import { SearchPipe } from './component/utils/search.pipe';
+import { ChequeComponent } from './component/cheque/cheque.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SearchPipe } from './component/utils/search.pipe';
     DetailsComponent,
     DetailsCreateComponent,
     SearchPipe,
+    ChequeComponent,
   ],
   imports: [
     BrowserModule,

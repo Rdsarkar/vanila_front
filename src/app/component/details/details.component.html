@@ -30,7 +30,8 @@
   <tr><input [(ngModel)]="searchName" type="text" placeholder="Search Here" (keyup)="searchDetailsVALKFromAPI()"></tr>
 </table>
 
-<table class="table col-6 offset-3" *ngIf="ekaneSearchResultRaklam">
+<table class="table col-6 offset-3" >
+  <!-- *ngIf="ekaneSearchResultRaklam" -->
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -40,7 +41,7 @@
 
     </tr>
   </thead>
-  <tbody>
+  <tbody  *ngIf="ekaneSearchResultRaklam">
     <tr *ngFor="let abc of ekaneSearchResultRaklam">
 
       <th scope="row">{{abc.id}}</th>
